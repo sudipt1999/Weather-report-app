@@ -1,0 +1,40 @@
+#search-field{
+    position: relative;
+}
+
+#search-field button{
+    position: absolute;
+    left:92%;
+    z-index:100;
+    height:auto;
+    font-size:25px;
+}
+
+#search-field input{
+    text-align: center;
+    height:150%;
+}
+
+
+@media only screen and (max-width: 600px){
+    #search-field button{
+        position: absolute;
+        left:80% !important;
+    }
+
+    .display-2{
+        font-size:300% !important;
+    }
+}
+
+#sec{
+    margin-top:30vh;
+}
+
+
+#invalid-alert{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+}

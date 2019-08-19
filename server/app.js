@@ -1,4 +1,4 @@
-// importing secrets from secret file
+//importing secrets from secret file
 const {geocodingApi, darkskyApi} = require('../secret')
 
 //importing predefined modules in node
@@ -8,8 +8,11 @@ const path = require('path');
 //importing installed modules
 const express = require('express')
 const axios = require('axios')
+const bodyParser = require('body-parser');
 
-// creating a express server
+
+
+//creating a express server
 const app = express()
 
 //configuring app to use handelbars view-engine
@@ -18,6 +21,12 @@ app.set('view engine', 'hbs')
 //configuring the views
 const __staticpath = path.join(__dirname , '../views')
 app.set('views', __staticpath)
+
+//configuring static path for js and css
+app.use(express.static(__staticpath))
+
+// for parsing application/json
+app.use(bodyParser.json()); 
 
 //importing the routers and using them in express
 const viewsRouter = require('./routes/viewsRouter')
