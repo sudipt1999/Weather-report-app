@@ -5,6 +5,12 @@ var router = express.Router();
 const geocode = require('../../utils/geocode')
 const forecast = require('../../utils/forecast')
 
+//importing secrets from secret file
+const {geocodingApi, darkskyApi} = require('../../secret')
+
+geocode.registerAPIKey(geocodingApi);
+forecast.registerAPIKey(darkskyApi);
+
 
 router.get('',(req, res)=>{
     res.render('index.hbs')
@@ -17,18 +23,17 @@ router.post('',(req, res)=>{
         return
     }
 
-    geocode(address, (error, { latitude, longitude, location }) => {
+    geocode.doRequest(address, (error, { latitude, longitude, location }) => {
         if (error) {
             res.send(error).status(400)
             return
         }
 
-        forecast(latitude, longitude, (error, forecastData) => {
+        forecast.doRequest(latitude, longitude, (error, forecastData) => {
             if (error) {
                 res.send(error).status(400)
                 return
             }
-
 
             const data = {
                 location, forecastData
@@ -39,11 +44,6 @@ router.post('',(req, res)=>{
         })
     })
 })
-
-
-
-
-
 
 
 module.exports = router

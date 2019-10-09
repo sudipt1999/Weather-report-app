@@ -1,6 +1,3 @@
-//importing secrets from secret file
-const {geocodingApi, darkskyApi} = require('../secret')
-
 //importing predefined modules in node
 const path = require('path');
 
@@ -10,7 +7,8 @@ const express = require('express')
 const axios = require('axios')
 const bodyParser = require('body-parser');
 
-
+//importing secrets from secret file
+const {geocodingApi, darkskyApi} = require('../secret')
 
 //creating a express server
 const app = express()
@@ -26,14 +24,17 @@ app.set('views', __staticpath)
 app.use(express.static(__staticpath))
 
 // for parsing application/json
-app.use(bodyParser.json()); 
+app.use(bodyParser.json());
 
 //importing the routers and using them in express
 const viewsRouter = require('./routes/viewsRouter')
 app.use(viewsRouter)
 
 
-
+if (!geocodingApi || !darkskyApi) {
+    console.error('API Keys not found. Refer to the Readme on how to register and configure the APIs with the correct tokens.\n');
+    return;
+}
 
 
 // axios.post(`https://us1.locationiq.com/v1/search.php?key=da9e1ca0b70c11&q=Dehradun&format=json`)
