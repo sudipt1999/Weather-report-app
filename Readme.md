@@ -19,3 +19,7 @@ paste your key !
 3. run ```npm install``` in the root dir
 4. run ```npm start``` in terminal 
 5. Enjoy the project
+
+### Contributing
+
+View our [Contributing Docs](https://github.com/sudipt1999/Weather-report-app/blob/master/CONTRIBUTORS.md) for information regarding contributing to this project.
