@@ -49,7 +49,7 @@
 
     {{!-- MODAL FOR WEATHER REPORT --}}
     <div class="modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog" role="document" style="margin:1.75rem !important;max-width:100%;">
         <div class="modal-content">
         <div class="modal-header">
             <h5 class="modal-title" id="place"></h5>
@@ -58,12 +58,11 @@
             </button>
         </div>
 
-        <div class="modal-body">
-            <table class="table">
+        <div class="modal-body" style="overflow:auto;margin: 0px 12px 0px 0px;">
+            <div class="row" id="checkboxes"></div>
+            <table class="table" style="max-width:100%">
             <thead class="thead-dark">
-                <tr>
-                <th scope="col">Property</th>
-                <th scope="col">Value</th>
+                <tr id="thead">
                 </tr>
             </thead>
             <tbody id="tbody">
