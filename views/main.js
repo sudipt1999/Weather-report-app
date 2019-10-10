@@ -1,5 +1,5 @@
 $(function() {
-    
+
     const btn = $('#search-btn')
     const address = $('#place-name')
 
@@ -13,7 +13,7 @@ $(function() {
         //check if enter key is pressed
         if (event.which == 13){
             submitAddress(address.val())
-            address.val("") 
+            address.val("")
         }
      });
 
@@ -23,6 +23,7 @@ $(function() {
              return;
          }
 
+        toggleLoading(false);
 
          const place = $('#place')
          place.text(data.location)
@@ -56,6 +57,8 @@ $(function() {
              return
             }
 
+            toggleLoading(true);
+
             // making call to server for weather report
             const data = JSON.stringify({address})
             console.log(data)
@@ -66,7 +69,7 @@ $(function() {
                 data : data,
                 dataType:'json',
                 contentType: 'application/json',
-                success : function(data) {              
+                success : function(data) {
                   //  alert('Data:');
                     console.log(data)
                     showModal(data)
@@ -85,4 +88,8 @@ $(function() {
 
      }
 
+    const toggleLoading = (isLoading) => {
+        document.querySelector('#place-name').disabled = isLoading;
+        document.querySelector('#search-btn').disabled = isLoading;
+    };
 });
