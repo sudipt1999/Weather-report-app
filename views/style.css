@@ -38,3 +38,12 @@
     left:0;
     width: 100%;
 }
+
+.checkboxes {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.checkboxes > * + * {
+    margin-right: 16px;
+}
