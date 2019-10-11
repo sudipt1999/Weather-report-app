@@ -4,7 +4,7 @@
   "description": "A weather report app",
   "main": "server/app.js",
   "scripts": {
-    "start": "nodemon -x node server/app.js",
+    "start": "node server/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
