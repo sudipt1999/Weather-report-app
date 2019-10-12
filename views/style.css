@@ -38,3 +38,15 @@
     left:0;
     width: 100%;
 }
+
+#search-btn .loading-icon {
+    display: none;
+}
+
+#search-btn[disabled] .loading-icon {
+    display: initial;
+}
+
+#search-btn[disabled] .fa-search {
+    display: none;
+}

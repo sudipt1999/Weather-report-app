@@ -37,7 +37,10 @@
                 <div class="row text-center">
                     <div class="col-md-8 d-flex mx-auto" id="search-field">
                         <input id="place-name" type="text" class="form-control" placeholder="Enter Place Name">
-                        <button id="search-btn" class="btn"><i class="fa fa-search"></i></button>
+                        <button id="search-btn" class="btn">
+                            <i class="fa fa-search"></i>
+                            <svg width="32px" height="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="loading-icon" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;"><circle cx="50" cy="50" fill="none" ng-attr-stroke="{{config.color}}" ng-attr-stroke-width="{{config.width}}" ng-attr-r="{{config.radius}}" ng-attr-stroke-dasharray="{{config.dasharray}}" stroke="#000000" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138"><animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform></circle></svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -46,7 +49,7 @@
 
     {{!-- MODAL FOR WEATHER REPORT --}}
     <div class="modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog" role="document" style="margin:1.75rem !important;max-width:100%;">
         <div class="modal-content">
         <div class="modal-header">
             <h5 class="modal-title" id="place"></h5>
@@ -55,19 +58,18 @@
             </button>
         </div>
 
-        <div class="modal-body">
-            <table class="table">
+        <div class="modal-body" style="overflow:auto;margin: 0px 12px 0px 0px;">
+            <div class="row" id="checkboxes"></div>
+            <table class="table" style="max-width:100%">
             <thead class="thead-dark">
-                <tr>
-                <th scope="col">Property</th>
-                <th scope="col">Value</th>
+                <tr id="thead">
                 </tr>
             </thead>
             <tbody id="tbody">
             </tbody>
             </table>
         </div>
-        
+
         <div class="modal-footer text-center">
             <p class="lead text-center w-100">Thanks for using the weather app !</p>
         </div>

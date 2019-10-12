@@ -1,7 +1,5 @@
-# Weather App
-A app that will give you the current weather report of a given location
-
-This app uses the Mapbox Geolocation API along with
+# Weather App 
+An app that will give you weather report of your location.
 
 ## Getting Started
 
@@ -20,7 +18,9 @@ Both Mapbox and Dark Sky are paid services that allow for up to 1000 calls a day
 
 ### Configure the application with your API keys
 1. Create a ```secret.js``` file in root dir
-2. Add your Api key from Darksky Api and Mapbox
+
+2. Add your API key from [Dark Sky](https://darksky.net/dev) and [LocationIQ](https://locationiq.com).
+
 ```
 let apiKey  =  {
     geocodingApi: YOUR API KEY,
@@ -29,7 +29,6 @@ let apiKey  =  {
 
 module.exports = apiKey
 ```
-
 
 ### Running the Project
 1. run ```npm install``` in the root dir
@@ -40,3 +39,13 @@ module.exports = apiKey
 ### Resources
 - [Mapbox Geolocation API](https://docs.mapbox.com/api/search/)
 - [Dark Sky Weather API](https://darksky.net/dev/docs)
+
+Paste your keys!
+
+3. Run ```npm install``` in the root dir.
+4. Run ```npm start``` in terminal.
+5. Enjoy the project.
+
+### Contributing
+
+View our [Contributing Docs](https://github.com/sudipt1999/Weather-report-app/blob/master/CONTRIBUTORS.md) for information regarding contributing to this project.
