@@ -33,6 +33,9 @@ const viewsRouter = require('./routes/viewsRouter')
 app.use(viewsRouter)
 
 
+app.get("/home", (req, res)=>{
+    res.render("home");
+})
 
 
 
